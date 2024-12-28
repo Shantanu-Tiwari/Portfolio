@@ -20,13 +20,13 @@ const stackItems = [
     {id:7, name: 'Python', icon: SiPython, color: '#3178C6'},
     {id:8, name: 'C++', icon: SiCplusplus, color: '#61DAFB'},
     {id:9, name: 'Django', icon: SiDjango, color: '#035400'},
-    {id:10, name: 'Django', icon: SiExpress, color: '#035400'},
+    {id:10, name: 'Express', icon: SiExpress, color: '#035400'},
 
 ]
 
 export const Stack = () => {
     return (
-        <section className="py-14 glass">
+        <section id="stack" className="py-14 glass">
             <div className="max-w-[1200px] mx-auto px-4 text-center">
                 <h2 className="text-5xl text-gray-200 font-bold mb-4">My Tech Stack</h2>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-cols-2 gap-6">

@@ -32,11 +32,11 @@ export const Hero = () => {
             className="relative grid min-h-screen place-content-center overflow-hidden px-4 py-24 text-gray-200"
         >
             <div className="z-10 flex flex-col items-center">
-        <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">
-          Open for work
-        </span>
+                <span className="mb-1.5 inline-block rounded-full bg-gray-600/50 px-3 py-1.5 text-sm">
+                    Open for work
+                </span>
                 <h1 className="text-white/40 text-7xl font-black">Hi, I am</h1>
-                <h1 className="max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent md:text-7xl">
+                <h1 className="max-w-3xl bg-gradient-to-br from-white to-gray-400 bg-clip-text font-black leading-tight text-transparent text-5xl md:text-7xl lg:text-8xl">
                     Shantanu Tiwari
                 </h1>
                 <div className="flex flex-col items-center">
@@ -46,7 +46,10 @@ export const Hero = () => {
                         width={250}
                         className="rounded-full"
                     />
-                    <motion.button
+                    <motion.a
+                        href="https://github.com/Shantanu-Tiwari"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.02 }}
                         className="flex justify-center items-center m-1 gap-2 px-4 py-2 bg-gray-800 mb-4 rounded-full"
                     >
@@ -56,8 +59,8 @@ export const Hero = () => {
                             width={30}
                             className="rounded-2xl mx-auto"
                         />
-                        <p className="font-medium text-center">Download my CV</p>
-                    </motion.button>
+                        <p className="font-medium text-center">Github</p>
+                    </motion.a>
                     <p className="flex justify-center font-medium max-w-xl text-center">
                         Fullstack developer based in India, bridging Ideas and Technology
                     </p>
@@ -65,8 +68,7 @@ export const Hero = () => {
             </div>
             <div className="bg-circle-container">
                 <div className="bg-circle-background"></div>
-                    <div className="bg-circle"></div>
-
+                <div className="bg-circle"></div>
             </div>
         </motion.section>
     );
