@@ -50,8 +50,10 @@ export const Portfolio = () => {
         });
     }, [color]);
 
-    // Ensure backgroundImage is only used when it is a valid motion value (not null)
-    const backgroundImage = isClient ? useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})` : undefined;
+    // Wrap backgroundImage in an object to ensure proper styling
+    const backgroundImage = isClient
+        ? { backgroundImage: useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})` }
+        : undefined;
 
     return (
         <motion.section style={backgroundImage} id="portfolio" className="py-32 text-white">
