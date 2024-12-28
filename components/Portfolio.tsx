@@ -1,11 +1,10 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import project1 from "@/assets/proj2.png";
 import project2 from "@/assets/proj1.png";
 import project3 from "@/assets/proj3.png";
-import { motion, useMotionTemplate, useMotionValue, animate } from "framer-motion";
+import {motion, useMotionTemplate, useMotionValue, animate} from "framer-motion";
 
 const projects = [
     {
@@ -35,13 +34,16 @@ const projects = [
 ];
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
+
+
+
+
+
 export const Portfolio = () => {
     const [selectedProject, setSelectedProject] = useState(projects[0]);
-    const [isClient, setIsClient] = useState(false);
     const color = useMotionValue(COLORS_TOP[0]);
 
     useEffect(() => {
-        setIsClient(true);
         animate(color, COLORS_TOP, {
             ease: "easeInOut",
             duration: 10,
@@ -49,15 +51,16 @@ export const Portfolio = () => {
             repeatType: "mirror",
         });
     }, [color]);
-
-    // Wrap backgroundImage in an object to ensure proper styling
-    const backgroundImage = isClient
-        ? { backgroundImage: useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})` }
-        : undefined;
+    const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`;
 
     return (
-        <motion.section style={backgroundImage} id="portfolio" className="py-32 text-white">
+        <motion.section style={{
+            backgroundImage
+        }}
+                        id="portfolio"
+                        className="py-32 text-white">
             <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+                {/* Left Section: Project Details */}
                 <div>
                     <h2 className="text-6xl font-bold mb-10">
                         Selected <span className="text-gray-400">Projects</span>
@@ -94,6 +97,7 @@ export const Portfolio = () => {
                     ))}
                 </div>
 
+                {/* Right Section: Project Image */}
                 <div className="flex justify-center items-center">
                     <Image
                         src={selectedProject.image}
