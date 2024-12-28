@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import L from "leaflet/dist/leaflet";
+import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 export const Contact = () => {
