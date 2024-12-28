@@ -11,22 +11,19 @@ export const Services = () => {
     return (
         <section className="text-white py-20">
             <div className="container mx-auto flex flex-col md:flex-row">
-                {/* Sidebar Heading */}
                 <div className="md:w-1/4 pr-8 mb-12 md:mb-0">
                     <h2 className="text-6xl text-purple-300 font-extrabold sticky top-20">
                         SERVICES
                     </h2>
                 </div>
 
-                {/* Services List */}
+
                 <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service) => (
                         <div key={service.id} className="flex items-start">
-                            {/* Service ID */}
                             <div className="text-gray-400 font-bold text-5xl mr-6">
                                 {service.id}
                             </div>
-                            {/* Service Content */}
                             <div>
                                 <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
                                 <p>{service.description}</p>

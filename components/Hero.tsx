@@ -1,5 +1,6 @@
 "use client";
-import { useEffect } from "react";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import profilepic from "@/assets/profilepic.png";
 import obj from "@/assets/obj1.png";
@@ -9,18 +10,29 @@ import { motion } from "framer-motion";
 const COLORS_TOP = ["#13FFAA", "#1E67C6", "#CE84CF", "#DD335C"];
 
 export const Hero = () => {
+    const [isClient, setIsClient] = useState(false);
     const color = useMotionValue(COLORS_TOP[0]);
 
     useEffect(() => {
-        animate(color, COLORS_TOP, {
-            ease: "easeInOut",
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "mirror",
-        });
-    }, [color]);
+        setIsClient(true);
+    }, []);
+
+    useEffect(() => {
+        if (isClient) {
+            animate(color, COLORS_TOP, {
+                ease: "easeInOut",
+                duration: 10,
+                repeat: Infinity,
+                repeatType: "mirror",
+            });
+        }
+    }, [color, isClient]);
 
     const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 0%, #000 50%, ${color})`;
+
+    if (!isClient) {
+        return null;
+    }
 
     return (
         <motion.section
