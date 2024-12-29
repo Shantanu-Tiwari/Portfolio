@@ -4,7 +4,7 @@ import { Stack } from "@/components/Stack";
 import {Portfolio} from "@/components/Portfolio";
 import {KeyMetrics} from "@/components/KeyMetrics";
 import {Services} from "@/components/Services";
-import {Contact} from "@/components/Contact";
+
 import {Footer} from "@/components/Footer";
 
 
@@ -19,7 +19,7 @@ export default function Home() {
 <Portfolio/>
             <KeyMetrics/>
  <Services/>
-  <Contact/>
+ 
   <Footer/>
             
         </>
