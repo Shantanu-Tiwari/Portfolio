@@ -1,32 +1,13 @@
 "use client";
+
 import { motion } from "framer-motion";
-import { useEffect } from "react";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import dynamic from "next/dynamic"; 
+
+const MapComponent = dynamic(() => import("@/components/MapComponent"), {
+    ssr: false, 
+});
 
 export const Contact = () => {
-    useEffect(() => {
-        // Ensure that the code only runs on the client side (window is available)
-        if (typeof window !== "undefined") {
-            const map = L.map("map").setView([28.5355, 77.3947], 15);
-            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                attribution: '&copy; OpenStreetMap contributors',
-            }).addTo(map);
-
-            const icon = new L.Icon({
-                iconUrl: "/marker-icon.png",
-                iconSize: [40, 41],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-            });
-
-            L.marker([28.5355, 77.3947], { icon })
-                .addTo(map)
-                .bindPopup("<b>Greater Noida West</b><br>Uttar Pradesh, India.")
-                .openPopup();
-        }
-    }, []); // Empty dependency array to run only once after component mounts
-
     return (
         <section id="contact" className="py-32 text-white max-w-[1200px] mx-auto px-4">
             <motion.div
@@ -91,7 +72,8 @@ export const Contact = () => {
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="w-full h-full min-h-[400px] rounded-2xl overflow-hidden"
                 >
-                    <div id="map" className="w-full h-[400px]"></div>
+                  
+                    <MapComponent />
                 </motion.div>
             </motion.div>
         </section>
