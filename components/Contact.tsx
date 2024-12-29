@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import L from "leaflet";
@@ -7,6 +6,7 @@ import "leaflet/dist/leaflet.css";
 
 export const Contact = () => {
     useEffect(() => {
+        // Ensure that the code only runs on the client side (window is available)
         if (typeof window !== "undefined") {
             const map = L.map("map").setView([28.5355, 77.3947], 15);
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -14,7 +14,7 @@ export const Contact = () => {
             }).addTo(map);
 
             const icon = new L.Icon({
-                iconUrl: "/marker-icon.png",  
+                iconUrl: "/marker-icon.png",
                 iconSize: [40, 41],
                 iconAnchor: [12, 41],
                 popupAnchor: [1, -34],
@@ -25,7 +25,7 @@ export const Contact = () => {
                 .bindPopup("<b>Greater Noida West</b><br>Uttar Pradesh, India.")
                 .openPopup();
         }
-    }, []);
+    }, []); // Empty dependency array to run only once after component mounts
 
     return (
         <section id="contact" className="py-32 text-white max-w-[1200px] mx-auto px-4">
