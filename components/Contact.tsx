@@ -14,7 +14,7 @@ export const Contact = () => {
             }).addTo(map);
 
             const icon = new L.Icon({
-                iconUrl: "/marker-icon.png",  // Ensure this file exists in the public folder
+                iconUrl: "/marker-icon.png",  
                 iconSize: [40, 41],
                 iconAnchor: [12, 41],
                 popupAnchor: [1, -34],
