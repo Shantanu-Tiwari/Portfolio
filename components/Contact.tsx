@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import L from "leaflet";
@@ -13,7 +14,7 @@ export const Contact = () => {
             }).addTo(map);
 
             const icon = new L.Icon({
-                iconUrl: "/marker-icon.png",
+                iconUrl: "/marker-icon.png",  // Ensure this file exists in the public folder
                 iconSize: [40, 41],
                 iconAnchor: [12, 41],
                 popupAnchor: [1, -34],
