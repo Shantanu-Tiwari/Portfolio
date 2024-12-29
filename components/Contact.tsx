@@ -57,8 +57,6 @@ export const Contact = () => {
                         <div className="space-y-4">
                             <p className="text-lg text-gray-300">Office</p>
                             <address className="text-xl not-italic leading-relaxed">
-                                Ajnara Homes, Greater Noida West
-                                <br />
                                 Greater Noida, Uttar Pradesh
                                 <br />
                                 India
